@@ -23,7 +23,7 @@ public class Ejercicio1 {
         Arrays.sort(arreglo);
 
         // Imprimir los elemnetos del arreglo
-        System.out.println("\n***Numero organizados de menor a mayor:");
+        System.out.println("\n***Numeros organizados de menor a mayor:");
         for (int i = 0; i < arreglo.length; i++) {
             System.out.println("arreglo[" + i + "] = " + arreglo[i]);
         }
