@@ -66,10 +66,37 @@ public class Actividad3 {
                     mostrarMatriz(matriz2, "Matriz 2");
                     int[][] matrizResta = restarMatrices(matriz1, matriz2);
                     System.out.println("\n");
-                    mostrarMatriz(matrizResta, "El resultado de la resta entre la 2 matrices es:");
+                    mostrarMatriz(matrizResta, "El resultado de la resta entre las 2 matrices es:");
                     break;
 
                 case 3:
+                    System.out.println(
+                            "\nProducto Escalar.");
+                    matriz1 = generarMatriz("Matriz 1");
+                    matriz2 = generarMatriz("Matriz 2");
+                    mostrarMatriz(matriz1, "Matriz 1");
+                    mostrarMatriz(matriz2, "Matriz 2");
+
+                    System.out.println("\nMATRIZ 1");
+                    int[][] matrizProductoEscalar1 = productoEscalar(matriz1);
+                    mostrarMatriz(matrizProductoEscalar1, "Matriz 1 Producto Escalar");
+
+                    System.out.println("\nMATRIZ 2");
+                    int[][] matrizProductoEscalar2 = productoEscalar(matriz2);
+                    mostrarMatriz(matrizProductoEscalar2, "Matriz 2 Producto Escalar");
+
+                    break;
+
+                case 4:
+                    System.out.println(
+                            "\nPara poder multiplicar dos matrices, la primera debe tener el mismo número de columnas que filas la segunda.");
+                    matriz1 = generarMatriz("Matriz 1");
+                    matriz2 = generarMatriz("Matriz 2");
+                    mostrarMatriz(matriz1, "Matriz 1");
+                    mostrarMatriz(matriz2, "Matriz 2");
+                    int[][] matrizMultiplicacion = multiplicarMatrices(matriz1, matriz2);
+                    System.out.println("\n");
+                    mostrarMatriz(matrizMultiplicacion, "El resultado de la multiplicación entre las 2 matrices es:");
                     break;
 
             }
@@ -80,7 +107,7 @@ public class Actividad3 {
     public static int[][] generarMatriz(String nombre) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingrese el número de filas para " + nombre + ": ");
+        System.out.print("\nIngrese el número de filas para " + nombre + ": ");
         int filas = scanner.nextInt();
         System.out.print("Ingrese el número de columnas para " + nombre + ": ");
         int columnas = scanner.nextInt();
@@ -135,5 +162,35 @@ public class Actividad3 {
         return resultadoRestaMatrices;
     }
 
-    public static int 
+    public static int[][] productoEscalar(int[][] matriz) {
+        Scanner scanner = new Scanner(System.in);
+        int filas = matriz.length;
+        int columnas = matriz[0].length;
+        int[][] resultadoProductoEscalar = new int[filas][columnas];
+
+        System.out.println("Ingrese el escalar(numero real) por el cual desea multiplicar la matriz:");
+        int escalar = scanner.nextInt();
+
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                resultadoProductoEscalar[i][j] = matriz[i][j] * escalar;
+            }
+        }
+
+        return resultadoProductoEscalar;
+    }
+
+    public static int[][] multiplicarMatrices(int[][] matriz1, int[][] matriz2) {
+        int filas = matriz1.length;
+        int columnas = matriz1[0].length;
+        int[][] resultadoMultiplicarMatrices = new int[filas][columnas];
+
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                resultadoMultiplicarMatrices[i][j] = matriz1[i][j] * matriz2[i][j];
+            }
+        }
+
+        return resultadoMultiplicarMatrices;
+    }
 }
