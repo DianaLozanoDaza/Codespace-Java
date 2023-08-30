@@ -13,13 +13,14 @@ public class ListaProfesor {
         Nodo nuevoNodo = new Nodo(profesor);
         nuevoNodo.siguiente = primerNodo;
         primerNodo = nuevoNodo;
-        System.out.println("Profesor registrado exitosamente.");
+        System.out.println("---Profesor registrado exitosamente---");
     }
 
     // 2. MOSTRAR LISTADO DE PROFESORES
     public void mostrarListadoProfesores() {
         Nodo nodoActual = primerNodo;
-        System.out.println("Listado de profesores:");
+        System.out.println("\n");
+        System.out.println("---Listado de profesores---");
         while (nodoActual != null) {
             System.out.println("Codigo: " + nodoActual.profesor.codigo);
             System.out.println("Nombre: " + nodoActual.profesor.nombre);
@@ -27,8 +28,8 @@ public class ListaProfesor {
             System.out.println("Celular: " + nodoActual.profesor.celular);
             System.out.println("-----------------------");
             nodoActual = nodoActual.siguiente;
-
         }
+        System.out.println("\n");
     }
 
     // 3. BUSCAR PROFESOR POR CODIGO
@@ -36,7 +37,7 @@ public class ListaProfesor {
         Nodo nodoActual = primerNodo;
         while (nodoActual != null) {
             if (nodoActual.profesor.codigo == codigo) {
-                System.out.println("Profesor encontrado: ");
+                System.out.println("---Profesor encontrado---");
                 System.out.println("Codigo: " + nodoActual.profesor.codigo);
                 System.out.println("Nombre: " + nodoActual.profesor.nombre);
                 System.out.println("Apellido: " + nodoActual.profesor.apelido);
@@ -45,22 +46,22 @@ public class ListaProfesor {
             }
             nodoActual = nodoActual.siguiente;
         }
-        System.out.println("Profesor con codigo " + codigo + " no encontrado.");
+        System.out.println("---Profesor con codigo " + codigo + " no encontrado---");
     }
 
-    //ELIMINAR PROFESOR POR CODIGO
-    public void eliminarProfesorCodigo(int codigo){
+    // ELIMINAR PROFESOR POR CODIGO
+    public void eliminarProfesorCodigo(int codigo) {
         Nodo nodoActual = primerNodo;
         Nodo nodoAnterior = null;
 
-        while (nodoActual != null){
-            if(nodoActual.profesor.codigo == codigo){
-                if(nodoAnterior == null){
+        while (nodoActual != null) {
+            if (nodoActual.profesor.codigo == codigo) {
+                if (nodoAnterior == null) {
                     primerNodo = nodoActual.siguiente;
-                }else{
+                } else {
                     nodoAnterior.siguiente = nodoActual.siguiente;
                 }
-                System.out.println("Profesor con codigo " + codigo + " fue eliminado.");
+                System.out.println("---Profesor con codigo " + codigo + " fue eliminado---");
                 return;
             }
             nodoAnterior = nodoActual;
