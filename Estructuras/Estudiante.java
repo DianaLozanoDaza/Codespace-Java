@@ -2,11 +2,6 @@ package Estructuras;
 
 import java.util.*;
 
-/* Código, Nombre, Apellido, Edad, fecha_nac, dirección, nota1, nota2, nota3, promedio.
-
-* Fecha_nac (día, mes, año)
-
-* Dirección (dirección, estrato, barrio, ciudad) */
 public class Estudiante {
 
     Scanner scanner = new Scanner(System.in);
@@ -100,6 +95,7 @@ public class Estudiante {
     public void ingresarInformacionEstudiante(){
         System.out.println("Ingresa el codigo del estudiante:");
         setCodigo(scanner.nextInt());
+        scanner.nextLine();
         
         System.out.println("Ingresa el nombre del estudiante:");
         setNombre(scanner.nextLine());
@@ -109,15 +105,28 @@ public class Estudiante {
 
         System.out.println("Ingresa la edad del estudiante:");
         setEdad(scanner.nextInt());
+        scanner.nextLine();
 
         System.out.println("Ingresa la fecha de nacimiento del estudiante (dia, mes, año):");
         setFecha_nac(scanner.nextLine());
         
-        System.out.println("Ingresa la direccion del estudiante:");
+        System.out.println("Ingresa la direccion del estudiante (dirección, estrato, barrio y ciudad):");
         setDireccion(scanner.nextLine());
 
         System.out.println("Ingresa la nota 1 del estudiante:");
         setNota1(scanner.nextFloat());
-    }
+        scanner.nextLine();
 
+        System.out.println("Ingrese la nota 2 del estudiante:");
+        setNota2(scanner.nextFloat());
+        scanner.nextLine();
+
+        System.out.println("Ingrese la nota 3 del estudiante:");
+        setNota3(scanner.nextFloat());
+        scanner.nextLine();
+
+        setPromedio((getNota1()+getNota2()+getNota3())/3);
+        System.out.printf("El promedio de las notas del estudiante es: %.2f%n",  promedio );
+        
+    }
 }
