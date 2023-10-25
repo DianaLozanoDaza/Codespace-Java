@@ -1,8 +1,8 @@
-package Analisis_de_algoritmos;
+package Analisis_de_algoritmos.Taller;
 
-public class Clase1 {
+public class CollatzPuntoUno {
     public static void main(String[] args) {
-        int n = 5; 
+        int n = 55; 
         System.out.println("Secuencia de Collatz para " + n + ":");
         int pasos = collatz(n);
         System.out.println("\nNúmero de pasos: " + pasos);
