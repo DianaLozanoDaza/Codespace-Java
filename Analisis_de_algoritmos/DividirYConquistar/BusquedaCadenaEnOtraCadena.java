@@ -36,9 +36,13 @@ public class BusquedaCadenaEnOtraCadena {
         String subcadena = "ejemplo";
 
         if (buscarCadena(subcadena, cadenaLarga)) {
+            System.out.println("       -----------------------------");
             System.out.println("La subcadena fue encontrada en la cadena larga.");
+            System.out.println("       -----------------------------");
         } else {
+            System.out.println("       -----------------------------");
             System.out.println("La subcadena no fue encontrada en la cadena larga.");
+            System.out.println("       ------------------------------");
         }
     }
 }
